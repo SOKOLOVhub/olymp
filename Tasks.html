@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <style>
+        .click{
+          background-color: white;border: 0; font-size: 15px;
+        }
+        .click:hover{
+          background-color: gray;border-radius: 5px; font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+  <!--<button onclick="Tasks()" class="click">задачи</button>
+  <button onclick="comp()" class="click">запуск</button>-->
+  <br>
+  <br>
+  <script>
+    function comp(){
+      location.href='compiler.html';
+    }
+    function Tasks(){
+      location.href='Tasks.html';
+    }
+  </script>
+    <table border="1" style="width: 1000px;">
+        <tr>
+          <th style="width: 20px;text-align: center;">№</th>
+          <th>Name</th>
+          <th>Сomplexity</th>
+          <th>point</th>
+        </tr>
+        <tr>
+          <td style="width: 20px;text-align: center;">A</td>
+          <td><a  href="Send.html">Коля и числа</a></td>
+          <td style="width: 100px;color: green;">easy</td>
+          <td id="ball1" style="width: 40px;text-align: center;">0</td>
+          
+        </tr>
+        <tr>
+          <td style="width: 20px;text-align: center;">B</td>
+          <td><a href="Send2.html">Петя и примеры</a></td>
+          <td style="width: 100px;color: orange;">medium</td>
+          <td id="ball2" style="width: 40px;text-align: center;">0</td>
+        </tr>
+      </table>
+    <script>
+          if (localStorage.getItem('ball1')!=undefined) 
+          {
+               document.getElementById("ball1").innerHTML=localStorage.getItem('ball1');
+               if (localStorage.getItem('ball1')<100 && localStorage.getItem('ball1')!=0) document.getElementById("ball1").style="color: orange;text-align: center;width: 40px;";
+               else if (localStorage.getItem('ball1')==100) document.getElementById("ball1").style="color: green;text-align: center;width: 40px;";
+               else
+               {
+                    document.getElementById("ball1").style="color: red;text-align: center;width: 40px;";
+                    document.getElementById("ball1").innerHTML="X";
+               } 
+          }
+          if (localStorage.getItem('ball2')!=undefined) 
+          {
+               document.getElementById("ball2").innerHTML=localStorage.getItem('ball2');
+               if (localStorage.getItem('ball2')<100 && localStorage.getItem('ball2')!=0) document.getElementById("ball2").style="color: orange;text-align: center;width: 40px;";
+               else if (localStorage.getItem('ball2')==100) document.getElementById("ball2").style="color: green;text-align: center;width: 40px;";
+               else
+               {
+                    document.getElementById("ball2").style="color: red;text-align: center;width: 40px;";
+                    document.getElementById("ball2").innerHTML="X";
+               } 
+          }
+    </script>
+</body>
+</html>
